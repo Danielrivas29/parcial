@@ -8,7 +8,7 @@ namespace model
 {
     public class cliente
     {
-        public int id { get; set; }
+        public int idclientes { get; set; }
         public string documento { get; set; }
         public string nombre { get; set; }
         public int edad { get; set; }

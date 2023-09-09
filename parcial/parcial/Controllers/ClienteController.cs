@@ -1,6 +1,7 @@
 ﻿using data.Repositorio;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using model;
 
 namespace parcial.Controllers
 {
@@ -9,14 +10,14 @@ namespace parcial.Controllers
     public class ClienteController : ControllerBase
     {
         public readonly iClienteRepositorio _clienteRepositorio;
-        public ClienteController(iClienteRepositorio clienteRepsitory)
+        public ClienteController(iClienteRepositorio clienteRepositorio)
         {
-            _clienteRepositorio = ClienteRepositorio;
+            _clienteRepositorio = clienteRepositorio;
         }
         [HttpGet]
         public async Task<IActionResult> getClientes()
         {
-            return Ok(await _clienteRepositorio.getCliente());
+            return Ok(await _clienteRepositorio.getClientes());
         }
         [HttpGet("{id}")]
         public async Task<ActionResult> getClientesById(int id)
